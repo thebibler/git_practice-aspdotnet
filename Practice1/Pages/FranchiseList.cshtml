@@ -1,0 +1,42 @@
+﻿@page
+@model Practice1.Pages.FranchisesModel
+@{
+}
+
+
+<main class="franchise-page-main">
+    <div class="for-background-color">
+
+        @for (int i = 0; i < @Model.FranchiseList.GoogleTable.Count; i++)
+        {
+            <div class="franchise-list-team-photo">
+                <div class="franchise-list-h1-container">
+                    <h1 class="franchise-list-h1"><a asp-page="/TeamHome" asp-route-teamname="@Model.FranchiseList.GoogleTable[i][0]"> @Model.FranchiseList.GoogleTable[i][0]</a></h1>
+                </div>
+
+                <div class="franchise-list-trophy-photo-container">
+                    @if ((string)@Model.TrophyList.GoogleTable[i][0] == "belt")
+                    {
+                        <div class="franchise-list-photo-label" title="Belt Holder">
+                            <img class="franchise-list-trophy-photo" src="~/css/Images/TNIID_Belt.png" />
+                        </div> 
+                    }
+                    else if ((string)@Model.TrophyList.GoogleTable[i][0] == "champ")
+                    {
+                    <div class="franchise-list-photo-label" title="League Champ">
+                        <img class="franchise-list-trophy-photo" src="/css/Images/TNIID Trophy.png" />
+                    </div>
+                    }
+                    else if ((string)@Model.TrophyList.GoogleTable[i][0] == "winner")
+                    {
+                    <div class="franchise-list-photo-label" title="Winningest Franchise">
+                        <img class="franchise-list-trophy-photo" src="~/css/Images/TNIID W.png" />
+                    </div>
+                    }
+                </div>
+            </div>
+
+         }
+
+    </div>
+</main>

@@ -1,0 +1,611 @@
+﻿@page
+@model Practice1.Pages.Current_WeekModel
+@{
+}
+
+<div class="game-preview-background-logo">
+    <div class="game-preview-background-color">
+        <div class="game-preview-whole">
+            <div class="game-preview-table">
+                <h1 class="game-preview-table-header">Game 1</h1>
+                <table class="game-preview-table-table">
+                    @foreach (var row in Model.Game1.GoogleTable)
+                    {
+                        <tr>
+                            @if (@row.Count == 1)
+                            {
+                                <td colspan="3" class="game-preview-table-header">@row[0]</td>
+                            }
+                            else if (row.Count == 2)
+                            {
+                                <td class="game-preview-left-col">@row[0]</td>
+                                <td colspan="2">@row[1]</td>
+                            }
+                            else
+                            {
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+
+                                    if (i == 0)
+                                    {
+                                        <td class="game-preview-left-col">@row[i]</td>
+                                    }
+
+
+                                    if (i == 1 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+                                    if (i == 2 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+
+
+                                }
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="game-preview-table">
+                <h1 class="game-preview-table-header">Game 2</h1>
+                <table class="game-preview-table-table">
+                    @foreach (var row in Model.Game2.GoogleTable)
+                    {
+                        <tr>
+                            @if (@row.Count == 1)
+                            {
+                                <td colspan="3" class="game-preview-table-header">@row[0]</td>
+                            }
+                            else if (row.Count == 2)
+                            {
+                                <td class="game-preview-left-col">@row[0]</td>
+                                <td colspan="2">@row[1]</td>
+                            }
+                            else
+                            {
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+
+                                    if (i == 0)
+                                    {
+                                        <td class="game-preview-left-col">@row[i]</td>
+                                    }
+
+
+                                    if (i == 1 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+                                    if (i == 2 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+
+
+                                }
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="game-preview-table">
+                <h1 class="game-preview-table-header">Game 3</h1>
+                <table class="game-preview-table-table">
+                    @foreach (var row in Model.Game3.GoogleTable)
+                    {
+                        <tr>
+                            @if (@row.Count == 1)
+                            {
+                                <td colspan="3" class="game-preview-table-header">@row[0]</td>
+                            }
+                            else if (row.Count == 2)
+                            {
+                                <td class="game-preview-left-col">@row[0]</td>
+                                <td colspan="2">@row[1]</td>
+                            }
+                            else
+                            {
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+
+                                    if (i == 0)
+                                    {
+                                        <td class="game-preview-left-col">@row[i]</td>
+                                    }
+
+
+                                    if (i == 1 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+                                    if (i == 2 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+
+
+                                }
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="game-preview-table">
+                <h1 class="game-preview-table-header">Game 4</h1>
+                <table class="game-preview-table-table">
+                    @foreach (var row in Model.Game4.GoogleTable)
+                    {
+                        <tr>
+                            @if (@row.Count == 1)
+                            {
+                                <td colspan="3" class="game-preview-table-header">@row[0]</td>
+                            }
+                            else if (row.Count == 2)
+                            {
+                                <td class="game-preview-left-col">@row[0]</td>
+                                <td colspan="2">@row[1]</td>
+                            }
+                            else
+                            {
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+
+                                    if (i == 0)
+                                    {
+                                        <td class="game-preview-left-col">@row[i]</td>
+                                    }
+
+
+                                    if (i == 1 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+                                    if (i == 2 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+
+
+                                }
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="game-preview-table">
+                <h1 class="game-preview-table-header">Game 5</h1>
+                <table class="game-preview-table-table">
+                    @foreach (var row in Model.Game5.GoogleTable)
+                    {
+                        <tr>
+                            @if (@row.Count == 1)
+                            {
+                                <td colspan="3" class="game-preview-table-header">@row[0]</td>
+                            }
+                            else if (row.Count == 2)
+                            {
+                                <td class="game-preview-left-col">@row[0]</td>
+                                <td colspan="2">@row[1]</td>
+                            }
+                            else
+                            {
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+
+                                    if (i == 0)
+                                    {
+                                        <td class="game-preview-left-col">@row[i]</td>
+                                    }
+
+
+                                    if (i == 1 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+                                    if (i == 2 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+
+
+                                }
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="game-preview-table">
+                <h1 class="game-preview-table-header">Game 6</h1>
+                <table class="game-preview-table-table">
+                    @foreach (var row in Model.Game6.GoogleTable)
+                    {
+                        <tr>
+                            @if (@row.Count == 1)
+                            {
+                                <td colspan="3" class="game-preview-table-header">@row[0]</td>
+                            }
+                            else if (row.Count == 2)
+                            {
+                                <td class="game-preview-left-col">@row[0]</td>
+                                <td colspan="2">@row[1]</td>
+                            }
+                            else
+                            {
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+
+                                    if (i == 0)
+                                    {
+                                        <td class="game-preview-left-col">@row[i]</td>
+                                    }
+
+
+                                    if (i == 1 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+                                    if (i == 2 && row.Count == 3)
+                                    {
+                                        string cellOneString = row[1].ToString();
+
+                                        double cellOneDouble;
+
+                                        string cellTwoString = row[2].ToString();
+
+                                        double cellTwoDouble;
+
+                                        Double.TryParse(cellTwoString, out cellTwoDouble);
+
+                                        if (Double.TryParse(cellOneString, out cellOneDouble))
+                                        {
+
+                                            if (cellOneDouble < cellTwoDouble)
+                                            {
+                                                <td class="winner-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble > cellTwoDouble)
+                                            {
+                                                <td class="loser-formatting">@row[i]</td>
+                                            }
+                                            if (cellOneDouble == cellTwoDouble)
+                                            {
+                                                <td class="game-preview-table-no-formatting">@row[i]</td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <td class="game-preview-table-no-formatting">@row[i]</td>
+                                        }
+                                    }
+
+
+                                }
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>  
+</div>

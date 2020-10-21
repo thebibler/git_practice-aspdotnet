@@ -1,0 +1,210 @@
+﻿@page "{teamname}"
+@model Practice1.Pages.TeamHomeModel
+@{
+}
+
+<div class="team-home-page-logo">
+    <div class="team-home-page-background-color">
+        <h1 class="team-home-page"> @Model.TeamName Home Page!</h1>
+        <h1 class="team-home-page">Current Season</h1>
+        <div class="team-home-page-season-stats">
+            <div class="team-home-page-table">
+                <h2 class="team-home-page-h2">Team Stats</h2>
+                <table class="team-home-page">
+                    <thead>
+                        <tr>
+                            <th class="team-home-page-th">Metric</th>
+                            <th class="team-home-page-th">Value</th>
+                            <th class="team-home-page-th">Lg Rank</th>
+                            <th class="team-home-page-th">Points Below PR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in Model.TeamSeasonStats.GoogleTable)
+                        {
+                            <tr class="team-home-page">
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+                                    if (i == 0)
+                                    {
+                                        <td class="team-home-page-left-col">@row[i]</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="team-home-page">@row[i]</td>
+                                    }
+                                }
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="team-home-page-table">
+                <h2 class="team-home-page-h2">Season Stats by Player</h2>
+                <table class="team-home-page">
+                    <thead>
+                        <tr>
+                            <th class="team-home-page-th">Position</th>
+                            <th class="team-home-page-th">Player</th>
+                            <th class="team-home-page-th">Points</th>
+                            <th class="team-home-page-th">League Rank</th>
+                            <th class="team-home-page-th">Points Below Season PR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in Model.PlayerSeasonStats.GoogleTable)
+                        {
+                            <tr class="team-home-page">
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+                                    if (i == 0)
+                                    {
+                                        <td class="team-home-page-left-col">@row[i]</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="team-home-page">@row[i]</td>
+                                    }
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <h1 class="team-home-page">Career Wins and Losses</h1>
+        <div class="team-home-page-wins-losses">
+            <div class="team-home-page-table">
+                <h2 class="team-home-page-h2">Overall Wins and Losses</h2>
+                <table class="team-home-page">
+                    <tbody>
+                        @foreach (var row in Model.CareerWinsAndLosses.GoogleTable)
+                        {
+                            <tr class="team-home-page">
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+                                    if (row[i] != "")
+                                    {
+                                        if (i == 0)
+                                        {
+                                            <td class="team-home-page-left-col">@row[i]</td>
+                                        }
+                                        else
+                                        {
+                                            <td class="team-home-page">@row[i]</td>
+                                        }
+                                    }
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="team-home-page-table">
+                <h2 class="team-home-page-h2">Belt Game Wins and Losses</h2>
+                <table class="team-home-page">
+                    <tbody>
+                        @foreach (var row in Model.BeltGameWinsAndLosses.GoogleTable)
+                        {
+                            <tr class="team-home-page">
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+                                    if (row[i] != "")
+                                    {
+                                        if (i == 0)
+                                        {
+                                            <td class="team-home-page-left-col">@row[i]</td>
+                                        }
+                                        else
+                                        {
+                                            <td class="team-home-page">@row[i]</td>
+                                        }
+                                    }
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h1 class="team-home-page">Team Records</h1>
+        <div class="team-home-page-team-records">
+            <div class="team-home-page-table">
+                <h2 class="team-home-page-h2">Single Game Records</h2>
+                <table class="team-home-page">
+                    <thead>
+                        <tr>
+                            <th class="team-home-page-th">Position</th>
+                            <th class="team-home-page-th">Game</th>
+                            <th class="team-home-page-th">Player/Opponent</th>
+                            <th class="team-home-page-th">Value</th>
+                            <th class="team-home-page-th">League Rank</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in Model.SingleGameRecords.GoogleTable)
+                        {
+                            <tr class="team-home-page">
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+                                    if (row[i] != "")
+                                    {
+                                        if (i == 0)
+                                        {
+                                            <td class="team-home-page-left-col">@row[i]</td>
+                                        }
+                                        else
+                                        {
+                                            <td class="team-home-page">@row[i]</td>
+                                        }
+                                    }
+                                }
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="team-home-page-table">
+                <h2 class="team-home-page-h2">Season Records</h2>
+                <table class="team-home-page">
+                    <thead>
+                        <tr>
+                            <th class="team-home-page-th">Position</th>
+                            <th class="team-home-page-th">Player</th>
+                            <th class="team-home-page-th">Season</th>
+                            <th class="team-home-page-th">Value</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in Model.SeasonRecords.GoogleTable)
+                        {
+                            <tr class="team-home-page">
+                                @for (int i = 0; i < row.Count; i++)
+                                {
+
+                                    if (i == 0)
+                                    {
+                                        <td class="team-home-page-left-col">@row[i]</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="team-home-page">@row[i]</td>
+                                    }
+
+                                }
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h1></h1>

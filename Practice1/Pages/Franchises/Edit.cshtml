@@ -1,0 +1,74 @@
+﻿@page
+@model Practice1.Pages.Franchises.EditModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Franchise</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Franchise.ID" />
+            <div class="form-group">
+                <label asp-for="Franchise.TeamName" class="control-label"></label>
+                <input asp-for="Franchise.TeamName" class="form-control" />
+                <span asp-validation-for="Franchise.TeamName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Franchise.Opponent" class="control-label"></label>
+                <input asp-for="Franchise.Opponent" class="form-control" />
+                <span asp-validation-for="Franchise.Opponent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Franchise.Score" class="control-label"></label>
+                <input asp-for="Franchise.Score" class="form-control" />
+                <span asp-validation-for="Franchise.Score" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Franchise.Stadium" class="control-label"></label>
+                <input asp-for="Franchise.Stadium" class="form-control" />
+                <span asp-validation-for="Franchise.Stadium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Franchise.Coach" class="control-label"></label>
+                <input asp-for="Franchise.Coach" class="form-control" />
+                <span asp-validation-for="Franchise.Coach" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Franchise.Mascot" class="control-label"></label>
+                <input asp-for="Franchise.Mascot" class="form-control" />
+                <span asp-validation-for="Franchise.Mascot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Franchise.TrophyID" class="control-label"></label>
+                <input asp-for="Franchise.TrophyID" class="form-control" />
+                <span asp-validation-for="Franchise.TrophyID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

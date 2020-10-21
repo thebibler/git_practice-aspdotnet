@@ -1,0 +1,239 @@
+﻿@page
+@model Practice1.Pages.Current_SeasonModel
+@{
+}
+
+
+<div class="current-season-background-logo">
+    <div class="current-season-background-color">
+        <h1 class="current-season-h1">Division Standings</h1>
+        <div class="current-season-divisions-tables">
+            <div class="current-season-table">
+                <table class="current-season-division-table">
+                    @for (int i = 0; i < Model.Division1.GoogleTable.Count; i++)
+                    {
+                        @if (i == 0)
+                        {
+                            <thead>
+                                <tr>
+                                    @for (int x = 0; x < Model.Division1.GoogleTable[i].Count; x++)
+                                    {
+                                        @if (@x == 0)
+                                        {
+                                            <th class="current-season-table-head current-season-table-left-col-division">@Model.Division1.GoogleTable[i][x]</th>
+                                        }
+                                        else
+                                        {
+                                            <th class="current-season-table-head current-season-table-cell-division">@Model.Division1.GoogleTable[i][x]</th>
+                                        }
+                                    }
+                                </tr>
+                            </thead>
+                        }
+                        else
+                        {
+                            <tr>
+                                @for (int x = 0; x < Model.Division1.GoogleTable[i].Count; x++)
+                                {
+                                    @if (@x == 0)
+                                    {
+                                        <td class="current-season-table-left-col-division">@Model.Division1.GoogleTable[i][x]</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="current-season-table-cell-division">@Model.Division1.GoogleTable[i][x]</td>
+                                    }
+
+                                }
+                            </tr>
+
+                        }
+
+                    }
+                </table>
+            </div>
+            <div class="current-season-table">
+                <table class="current-season-division-table">
+                    @for (int i = 0; i < Model.Division2.GoogleTable.Count; i++)
+                    {
+                        @if (i == 0)
+                        {
+                            <thead>
+                                <tr>
+                                    @for (int x = 0; x < Model.Division2.GoogleTable[i].Count; x++)
+                                    {
+                                        @if (@x == 0)
+                                        {
+                                            <th class="current-season-table-head current-season-table-left-col-division">@Model.Division2.GoogleTable[i][x]</th>
+                                        }
+                                        else
+                                        {
+                                            <th class="current-season-table-head current-season-table-cell-division">@Model.Division2.GoogleTable[i][x]</th>
+                                        }
+                                    }
+                                </tr>
+                            </thead>
+                        }
+                        else
+                        {
+                            <tr>
+                                @for (int x = 0; x < Model.Division2.GoogleTable[i].Count; x++)
+                                {
+                                    @if (@x == 0)
+                                    {
+                                        <td class="current-season-table-left-col-division">@Model.Division2.GoogleTable[i][x]</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="current-season-table-cell-division">@Model.Division2.GoogleTable[i][x]</td>
+                                    }
+
+                                }
+                            </tr>
+
+                        }
+
+                    }
+                </table>
+            </div>
+        </div>
+        <h1 class="current-season-h1">Season Leaders</h1>
+        <div class="current-season-season-leaders-tables">
+            <div class="current-season-table">
+                <table class="current-season-division-table">
+                    @for (int i = 0; i < Model.SeasonLeaders.GoogleTable.Count; i++)
+                    {
+                        @if (i == 0)
+                        {
+                            <thead>
+                                <tr>
+                                    @for (int x = 0; x < Model.SeasonLeaders.GoogleTable[i].Count; x++)
+                                    {
+                                        @if (@x == 0)
+                                        {
+                                            <th class="current-season-table-head current-season-table-left-col">@Model.SeasonLeaders.GoogleTable[i][x]</th>
+                                        }
+                                        else
+                                        {
+                                            <th class="current-season-table-head current-season-table-cell">@Model.SeasonLeaders.GoogleTable[i][x]</th>
+                                        }
+                                    }
+                                </tr>
+                            </thead>
+                        }
+                        else
+                        {
+                            <tr>
+                                @for (int x = 0; x < Model.SeasonLeaders.GoogleTable[i].Count; x++)
+                                {
+                                    @if (@x == 0)
+                                    {
+                                        <td class="current-season-table-left-col">@Model.SeasonLeaders.GoogleTable[i][x]</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="current-season-table-cell">@Model.SeasonLeaders.GoogleTable[i][x]</td>
+                                    }
+
+                                }
+                            </tr>
+
+                        }
+
+                    }
+                </table>
+            </div>
+            <div class="current-season-table">
+                <table class="current-season-division-table">
+                    @for (int i = 0; i < Model.SeasonLeadersCommittee.GoogleTable.Count; i++)
+                    {
+                        @if (i == 0)
+                        {
+                            <thead>
+                                <tr>
+                                    @for (int x = 0; x < Model.SeasonLeadersCommittee.GoogleTable[i].Count; x++)
+                                    {
+                                        @if (@x == 0)
+                                        {
+                                            <th class="current-season-table-head current-season-table-left-col">@Model.SeasonLeadersCommittee.GoogleTable[i][x]</th>
+                                        }
+                                        else
+                                        {
+                                            <th class="current-season-table-head current-season-table-cell">@Model.SeasonLeadersCommittee.GoogleTable[i][x]</th>
+                                        }
+                                    }
+                                </tr>
+                            </thead>
+                        }
+                        else
+                        {
+                            <tr>
+                                @for (int x = 0; x < Model.SeasonLeadersCommittee.GoogleTable[i].Count; x++)
+                                {
+                                    @if (@x == 0)
+                                    {
+                                        <td class="current-season-table-left-col">@Model.SeasonLeadersCommittee.GoogleTable[i][x]</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="current-season-table-cell">@Model.SeasonLeadersCommittee.GoogleTable[i][x]</td>
+                                    }
+
+                                }
+                            </tr>
+
+                        }
+
+                    }
+                </table>
+            </div>
+        </div>
+        <h1 class="current-season-h1">Season Single Game Highs</h1>
+        <div class="current-season-season-leaders-tables">
+            <div class="current-season-table">
+                <table class="current-season-division-table">
+                    @for (int i = 0; i < Model.SingleGameHighs.GoogleTable.Count; i++)
+                    {
+                        @if (i == 0)
+                        {
+                            <thead>
+                                <tr>
+                                    @for (int x = 0; x < Model.SingleGameHighs.GoogleTable[i].Count; x++)
+                                    {
+                                        @if (@x == 0)
+                                        {
+                                            <th class="current-season-table-head current-season-table-left-col">@Model.SingleGameHighs.GoogleTable[i][x]</th>
+                                        }
+                                        else
+                                        {
+                                            <th class="current-season-table-head current-season-table-cell">@Model.SingleGameHighs.GoogleTable[i][x]</th>
+                                        }
+                                    }
+                                </tr>
+                            </thead>
+                        }
+                        else
+                        {
+                            <tr>
+                                @for (int x = 0; x < Model.SingleGameHighs.GoogleTable[i].Count; x++)
+                                {
+                                    @if (@x == 0)
+                                    {
+                                        <td class="current-season-table-left-col">@Model.SingleGameHighs.GoogleTable[i][x]</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="current-season-table-cell">@Model.SingleGameHighs.GoogleTable[i][x]</td>
+                                    }
+
+                                }
+                            </tr>
+
+                        }
+
+                    }
+                </table>
+            </div>           
+        </div>
+    </div>   
+</div>
